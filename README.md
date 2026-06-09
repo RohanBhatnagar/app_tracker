@@ -1,6 +1,6 @@
 # Internship Tracker
 
-Internship Tracker is a Chrome extension plus Flask backend that watches a Gmail inbox, classifies internship-related emails, extracts status updates, and writes them into a Google Sheet.
+Internship Tracker is a Chrome extension I built a while ago that watches a Gmail inbox, classifies internship-related emails, extracts status updates, and writes them into a Google Sheet.
 
 ## Overview
 
