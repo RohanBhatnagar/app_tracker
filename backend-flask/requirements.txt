@@ -1,0 +1,14 @@
+Flask
+python-dotenv==0.19.0
+Flask-PyMongo==2.3.0
+google-auth
+google-auth-oauthlib
+werkzeug==1.0.1
+flask-restx
+joblib
+numpy
+sklearn 
+openai
+flask-jwt-extended
+stripe
+markupsafe==2.0.1

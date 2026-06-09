@@ -1,0 +1,7 @@
+chrome-extension/node_modules
+*.jsonl
+chrome-extension/dist
+.env
+chrome-extension/manifest.json
+*__pycache__
+.DS_Store

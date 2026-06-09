@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail Inbox Monitor",
+  "version": "1.0",
+  "description": "Monitor your Gmail inbox for new emails.",
+  "permissions": ["identity", "identity.email", "storage", "alarms"],
+  "host_permissions": [
+    "__EXTENSION_API_ORIGIN__/*",
+    "https://www.googleapis.com/*",
+    "https://gmail.googleapis.com/*",
+    "https://sheets.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "dist/background.bundle.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "dist/index.html",
+    "default_icon": {
+      "16": "images/Logo.png",
+      "48": "images/Logo.png",
+      "128": "images/Logo.png"
+    }
+  },
+  "oauth2": {
+    "client_id": "__GOOGLE_OAUTH_CLIENT_ID__",
+    "scopes": [
+      "https://www.googleapis.com/auth/gmail.readonly",
+      "https://www.googleapis.com/auth/spreadsheets",
+      "https://www.googleapis.com/auth/drive.file",
+      "https://www.googleapis.com/auth/userinfo.profile",
+      "https://www.googleapis.com/auth/userinfo.email"
+    ]
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' __EXTENSION_API_ORIGIN__ https://www.googleapis.com https://gmail.googleapis.com https://sheets.googleapis.com;"
+  }
+}

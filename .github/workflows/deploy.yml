@@ -1,0 +1,32 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build and Deploy
+        env:
+          EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+          USER_NAME: ec2-user
+        run: |
+          echo "$EC2_SSH_KEY" > private_key
+          chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key $USER_NAME@$EC2_HOST << EOF
+            cd /home/ec2-user/rohan
+            git checkout master
+            git pull origin master
+            nohup ./deploy.sh
+          EOF
+
+      - name: Clean up
+        run: rm private_key

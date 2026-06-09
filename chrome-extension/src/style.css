@@ -1,0 +1,256 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+.wrapper {
+  height: 625px;
+  width: 425px;
+}
+
+.logo {
+  height: 60px;
+  width: 100px;
+  padding-bottom: 5px;
+}
+
+.header-container {
+  margin-left: 15px;
+  margin-top: 20px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.header-menu {
+  max-width: 385;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fafaf9;
+}
+
+.footer-container {
+  border-top: 1px solid #e6e3e3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.icon-butt {
+  border: none;
+  background-color: transparent;
+  flex: 1;
+}
+
+.icon:hover {
+  color: #302f2f;
+}
+
+.icon {
+  font-size: 25px;
+  box-sizing: border-box;
+  color: #9ca3af;
+}
+
+.clicked-icon {
+  font-size: 25px;
+  box-sizing: border-box;
+  color: #302f2f;
+}
+
+.home-wrapper {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sheet-link-butt {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 15px;
+  width: 50%;
+  align-items: center;
+  align-self: center;
+}
+
+.sheet-link-butt:hover {
+  background-color: lightblue;
+}
+
+.sheet-link {
+  margin: 0;
+}
+
+.grid-layout {
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  height: 65px;
+}
+
+.text-wrapper {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.role {
+  margin: 0;
+  color: #b2b2b2;
+}
+
+.company {
+  margin-bottom: 4px;
+  margin-top: 0;
+}
+
+.scrollable-cell {
+  max-height: 50px;
+  overflow: hidden;
+  white-space: nowrap;
+  /* transition: max-height 0.3s ease-in-out, white-space 0.3s ease-in-out; */
+}
+
+.scrollable-cell:hover {
+  white-space: normal;
+}
+
+.scrollable-cell::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+@keyframes pan {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.tags span {
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  position: relative;
+  padding: 0 6px 0 6px;
+  background: #777;
+  -webkit-border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  border-top-right-radius: 3px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  /* font-weight: bold; */
+}
+
+.tags span:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -12px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 12px 12px 0;
+}
+
+/* .tags span:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 1px;
+  float: left;
+  width: 5px;
+  height: 5px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #fff;
+  -webkit-box-shadow: -1px -1px 2px rgba(0,0,0,0.4);
+  box-shadow: -1px -1px 2px rgba(0,0,0,0.4);
+} */
+
+.tags span.red {
+  background: #f77b7b;
+}
+.tags span.red:before {
+  border-color: transparent #f77b7b transparent transparent;
+}
+.tags span.green {
+  background: #99f9a8; /* #89cb93 */
+}
+.tags span.green:before {
+  border-color: transparent #99f9a8 transparent transparent;
+}
+.tags span.gray {
+  background: #a4a4a4;
+}
+.tags span.gray:before {
+  border-color: transparent #a4a4a4 transparent transparent;
+}
+
+.tableRowCompany {
+  font-size: 13px;
+  /* font-weight: bold; */
+}
+
+.tableRowRole {
+  font-size: 12px;
+  color: gray;
+}
+
+.ant-table-row-expand-icon-cell,
+.ant-table-expanded-row {
+  border: none !important;
+}
+
+.ant-table-tbody > tr > td {
+  border-bottom: none !important;
+  border-top: 1px solid #f0f0f0;
+}
+
+.ant-table-expanded-row > td {
+  border: none !important;
+}
